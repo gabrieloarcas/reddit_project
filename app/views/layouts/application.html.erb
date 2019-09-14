@@ -22,13 +22,24 @@
      <li><%= link_to 'Account', edit_user_registration_path %></li>
      <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
     </ul>
-   <% else %>
-    <ul>
-     <li><%= link_to 'Sign up', new_user_registration_path%></li>
-     <li><%= link_to 'Sign in', new_user_session_path %></li>
-    </ul>
-   <% end %>
- 
+      <li><%= link_to 'New Post', new_post_path %></li>
+   
+    <% else %>
+      <ul>
+      <li><%= link_to 'Sign up', new_user_registration_path%></li>
+      <li><%= link_to 'Sign in', new_user_session_path %></li>
+      </ul>
+    <% end %>
+
+    <li><%= link_to 'Home', posts_path %></li> 
+    <li><%= link_to 'Pages', pages_path %></li>
+    <li><%= link_to 'Links', links_path %></li>
+
+
+  <%= render 'posts/nav' %> <!-- renders a nice, fixed nav on the top -->
+
+  
+
     <%= yield %>
 
     

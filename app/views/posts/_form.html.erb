@@ -1,12 +1,12 @@
 <%= form_for(post) do |f| %>
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, placeholder: "Type your title here" %>
   </div>
 
   <div class="field">
     <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, size: "60x15", placeholder: "Type your content here" %>
   </div>
 
   <div class="field">

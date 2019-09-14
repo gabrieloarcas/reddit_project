@@ -2,16 +2,16 @@
 
 <h1>Latest</h1>
 
-<%= link_to 'New Post', new_post_path %>
-<%= link_to 'Pages', pages_path %>
-<%= link_to 'Links', links_path %>
 
 <% @posts.each do |post| %>
   <div><%= link_to(post.title, post) %></div>
   <div>Author: <%= post.user_id  && post.user.username%></div>
-  <div><%= post.category && post.category.name %></div>
+  <div><%= post.category.name %></div>
   <div><%= post.body %></div>
+  <%= post.get_upvotes.size%> Upvotes
+  <%= post.get_downvotes.size%> Downvotes
   <div><p>Created <%= time_ago_in_words(post.created_at) %> ago</p></div>
+ 
   
   <!-- Showing updates only when updates are made -->
 
@@ -19,16 +19,17 @@
     Edited <%= time_ago_in_words(post.updated_at)%> ago
  <% end%>
 
-    
-		   
-<div>
+  <div>
   <%= post.comments.count %> comments</div>
-</div>
+  </div>
 
   <% if post.user == current_user %>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
+
+ 
+  
 
 
  

@@ -7,20 +7,34 @@ class PostsController < ApplicationController
   # before_action :set_post, except: [:index, :new, :create]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    # @posts = Post.all.order(created_at: :desc)
+
+  if params[:category].blank?
+    @posts = Post.all.order("created_at DESC")
+    else
+    @category_id = Category.find_by(name: params[:category]).id
+    @posts = Post.where(category_id: @category_id).order("created_at DESC")
+    end
+
+
   end
 
   def show
+    @relative_posts = @post.category.posts
   end
 
   def new
-    @post = current_user.posts.build
+    @post = current_user.posts.create
   end
 
   def create
-    @post = current_user.posts.build(post_params)
-    @post.save
+    @post = current_user.posts.create(post_params)
+    if @post.save
+      flash[:success] = "The post was created!"
     redirect_to @post
+    else 
+      render 'new'
+    end
   end
 
   def edit
@@ -39,7 +53,7 @@ class PostsController < ApplicationController
   def upvote
     @post = Post.find(params[:id])
     @post.upvote_by current_user
-    redirect_to @post #Updating the vote without reloading.......:)) 
+    redirect_to @post #Updating the vote without reloading....... 
   end
     
   def downvote
