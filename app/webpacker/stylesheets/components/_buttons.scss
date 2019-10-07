@@ -1,63 +1,61 @@
 .button_1 {
-  color: #0079D3;
+color: #0079D3;
+width: 85px;
+text-transform: uppercase;
+text-decoration: none;
+background: #ffffff;
+padding: 5px 20px;
+margin: 7px 20px 3px 0;
+border: 1px solid $color-button;
+border-radius: 4px;
+display: inline-block;
+text-align: center;
+}
+
+.button_1:hover {
+color: #33a8ff;
+background: #ffffff;
+border-color: #33a8ff;
+
+}
+
+.button_2 {
+  color: #ffffff;
+  margin: 7px 20px 3px 0;
   width: 85px;
+  text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  background: #ffffff;
+  background: $color-button;
   padding: 5px 20px;
-  margin: 7px 20px 3px 0;
   border: 1px solid $color-button;
   border-radius: 4px;
   display: inline-block;
-  text-align: center;
+  
   }
 
-.button_1:hover {
-  color: #33a8ff;
-  background: #ffffff;
+.button_2:hover {
+  color: #ffffff;
+  background: #33a8ff;
   border-color: #33a8ff;
-
   }
 
-  .button_2 {
-    color: #ffffff;
-    margin: 7px 20px 3px 0;
-    width: 85px;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: $color-button;
-    padding: 5px 20px;
-    border: 1px solid $color-button;
-    border-radius: 4px;
-    display: inline-block;
-    
-    }
-  
-  .button_2:hover {
-    color: #ffffff;
-    background: #33a8ff;
-    border-color: #33a8ff;
- 
-    }
-
-    input[type=text] {
-      padding:5px; 
-      border:2px solid #ccc; 
+  input[type=text] {
+    padding:5px; 
+    border:2px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+  }
+      
+  input[type=text]:focus {
+      border-color:#333;
+  }
+      
+  input[type=submit] {
+      padding:5px 15px; 
+      background:#ccc; 
+      border:0 none;
+      cursor:pointer;
       -webkit-border-radius: 5px;
-      border-radius: 5px;
+      border-radius: 5px; 
   }
-    
-    input[type=text]:focus {
-        border-color:#333;
-    }
-    
-    input[type=submit] {
-        padding:5px 15px; 
-        background:#ccc; 
-        border:0 none;
-        cursor:pointer;
-        -webkit-border-radius: 5px;
-        border-radius: 5px; 
-    }
-  
