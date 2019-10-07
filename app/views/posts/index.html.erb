@@ -26,7 +26,7 @@
         <div class="name">Created <%= time_ago_in_words(post.created_at) %> ago, 
           by  <%= post.user_id  && post.user.username%>. 
             <% if post.updated_at != post.created_at %> <!-- Showing updates only when updates are made -->
-              Edited <%= time_ago_in_words(post.updated_at)%> ago
+               Edited <%= time_ago_in_words(post.updated_at)%> ago
             <% end%>
         </div>
         
