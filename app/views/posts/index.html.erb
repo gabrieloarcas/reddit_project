@@ -42,7 +42,7 @@
           <%= form_for ([post, post.comments.build]), :html=>{:class => 'submit-form'} do |f| %>    <!-- comments fields on front page-->
             <div class="field">
               <div><strong><%= f.label :name %></strong></div>
-              <%= f.text_field :name , placeholder: "Type your name here" %>
+              <%= f.text_field :name, placeholder: "Type your name here" %>
             </div>
             <div class="field">
               <div><strong><%= f.label :comment, class: "text-area" %></strong></div>
