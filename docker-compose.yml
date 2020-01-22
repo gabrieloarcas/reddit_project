@@ -1,10 +1,10 @@
-version: '3'
+version: "3"
 services:
   db:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      - MYSQL_ROOT_PASSWORD=website24
+      - MYSQL_ROOT_PASSWORD="website24"
     volumes:
       - /home/gabriel/Desktop/reddit_project/tmp/db:/var/lib/mysql/
     ports:
@@ -15,7 +15,7 @@ services:
     volumes:
       - /home/gabriel/Desktop/reddit_project:/myapp
     ports:
-      - '3035:3035'
+      - "3035:3035"
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
